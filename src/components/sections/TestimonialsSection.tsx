@@ -1,11 +1,8 @@
 "use client";
 
-import { useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Icon } from "@/components/atoms/Icon";
-import { TestimonialCard, type TestimonialCardProps } from "@/components/molecules/TestimonialCard";
-import { Container } from "@/components/organisms/Container";
+import { type TestimonialCardProps } from "@/components/molecules/TestimonialCard";
 import { cn } from "@/lib/cn";
+import { useRef } from "react";
 
 export interface TestimonialsSectionProps {
   title: string;
@@ -37,7 +34,7 @@ export function TestimonialsSection({
       id={id}
       className={cn("bg-secondary-container text-on-secondary-container py-20 md:py-28", className)}
     >
-      <Container>
+      {/* <Container>
         <header className="mb-12 flex items-end justify-between gap-6">
           <h2 className="font-display text-3xl leading-tight font-bold sm:text-4xl lg:text-5xl">
             {title}
@@ -69,7 +66,7 @@ export function TestimonialsSection({
         {testimonials.map((t) => (
           <TestimonialCard key={t.authorName} {...t} />
         ))}
-      </div>
+      </div> */}
     </section>
   );
 }

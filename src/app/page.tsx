@@ -7,7 +7,7 @@ import {
   PromiseSection,
   ReservationCtaSection,
   SiteFooter,
-  TestimonialsSection,
+  TestimonialsSection
 } from "@/components/sections";
 import {
   about,
@@ -19,7 +19,7 @@ import {
   navItems,
   promise,
   reservation,
-  testimonials,
+  testimonials
 } from "@/lib/site-data";
 
 export default function Home() {
