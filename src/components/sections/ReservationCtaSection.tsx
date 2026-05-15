@@ -1,9 +1,9 @@
-import { CheckCircle2 } from "lucide-react";
-import Link from "next/link";
 import { Button } from "@/components/atoms/Button";
 import { Icon } from "@/components/atoms/Icon";
 import { Container } from "@/components/organisms/Container";
 import { cn } from "@/lib/cn";
+import { CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 
 export interface ReservationCtaSectionProps {
   title: string;
