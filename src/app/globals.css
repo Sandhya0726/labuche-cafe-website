@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+/*
+ * Labuche Boutique Aesthetic — design tokens
+ * Source of truth: DESIGN.md. Tailwind v4 @theme directive auto-generates
+ * utility classes (bg-surface, text-on-surface, font-display, rounded-lg, …).
+ */
+@theme {
+  /* Surfaces */
+  --color-surface: #16130a;
+  --color-surface-dim: #16130a;
+  --color-surface-bright: #3c392e;
+  --color-surface-container-lowest: #100e06;
+  --color-surface-container-low: #1e1c12;
+  --color-surface-container: #222015;
+  --color-surface-container-high: #2d2a1f;
+  --color-surface-container-highest: #383529;
+  --color-surface-variant: #383529;
+  --color-surface-tint: #d9c683;
+  --color-inverse-surface: #e9e2d2;
+  --color-inverse-on-surface: #333025;
+
+  /* Foreground */
+  --color-on-surface: #e9e2d2;
+  --color-on-surface-variant: #cdc6b5;
+  --color-outline: #969081;
+  --color-outline-variant: #4b473a;
+
+  /* Primary (warm yellow accent — used via primary-container per MD3) */
+  /* --color-primary: #ffffff;
+  --color-on-primary: #3a3000;
+  --color-primary-container: #f6e29c;
+  --color-on-primary-container: #72642b;
+  --color-inverse-primary: #6c5e25;
+  --color-primary-fixed: #f6e29c;
+  --color-primary-fixed-dim: #d9c683;
+  --color-on-primary-fixed: #221b00;
+  --color-on-primary-fixed-variant: #53460f; */
+
+  /* Primary */
+  --color-primary: #f7e39d;
+  --color-on-primary: #3e3210;
+  --color-primary-container: #fff1c4;
+  --color-on-primary-container: #6b5620;
+  --color-inverse-primary: #d6be72;
+  --color-primary-fixed: #fff1c4;
+  --color-primary-fixed-dim: #e7cf84;
+  --color-on-primary-fixed: #241b00;
+  --color-on-primary-fixed-variant: #5a4715;
+
+  /* Secondary (muted sage)
+  --color-secondary: #aacfbe;
+  --color-on-secondary: #14362b;
+  --color-secondary-container: #2e5043;
+  --color-on-secondary-container: #9cc0b0;
+  --color-secondary-fixed: #c5ebd9;
+  --color-secondary-fixed-dim: #aacfbe;
+  --color-on-secondary-fixed: #002117;
+  --color-on-secondary-fixed-variant: #2c4d40; */
+
+  /* Secondary (muted sage) */
+  --color-secondary: #7fa394;
+  --color-on-secondary: #102821;
+  --color-secondary-container: #294d41;
+  --color-on-secondary-container: #b8d2c6;
+  --color-secondary-fixed: #cfe4da;
+  --color-secondary-fixed-dim: #9dbcaf;
+  --color-on-secondary-fixed: #061a14;
+  --color-on-secondary-fixed-variant: #355c4e;
+
+  /* Tertiary (warm cream) */
+  --color-tertiary: #ffffff;
+  --color-on-tertiary: #382f21;
+  --color-tertiary-container: #f0e0cb;
+  --color-on-tertiary-container: #6e6352;
+  --color-tertiary-fixed: #f0e0cb;
+  --color-tertiary-fixed-dim: #d4c4b0;
+  --color-on-tertiary-fixed: #221a0d;
+  --color-on-tertiary-fixed-variant: #504536;
+
+  /* Error */
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+
+  /* Background aliases */
+  --color-background: #16130a;
+  --color-on-background: #e9e2d2;
+
+  /* Typography — values are wired to next/font CSS variables in layout.tsx */
+  --font-display: var(--font-zilla-slab), "Zilla Slab", Georgia, serif;
+  --font-body: var(--font-open-sans), "Open Sans", system-ui, sans-serif;
+  --font-sans: var(--font-open-sans), "Open Sans", system-ui, sans-serif;
+
+  /* Type scale */
+  --text-display-lg: 3rem;
+  --text-display-lg--line-height: 1.1;
+  --text-display-lg--font-weight: 800;
+
+  --text-headline-lg: 2rem;
+  --text-headline-lg--line-height: 1.2;
+  --text-headline-lg--font-weight: 700;
+
+  --text-headline-md: 1.5rem;
+  --text-headline-md--line-height: 1.3;
+  --text-headline-md--font-weight: 700;
+
+  --text-headline-sm: 1.25rem;
+  --text-headline-sm--line-height: 1.4;
+  --text-headline-sm--font-weight: 600;
+
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.6;
+  --text-body-lg--font-weight: 500;
+
+  --text-body-md: 1rem;
+  --text-body-md--line-height: 1.6;
+  --text-body-md--font-weight: 400;
+
+  --text-label-md: 0.875rem;
+  --text-label-md--line-height: 1;
+  --text-label-md--font-weight: 600;
+  --text-label-md--letter-spacing: 0.05em;
+
+  /* Radii */
+  --radius-sm: 0.25rem;
+  --radius-DEFAULT: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 1.75rem;
+  --radius-full: 9999px;
+
+  /* Spacing (8px rhythm + container) */
+  --spacing-gutter: 1.5rem;
+  --spacing-margin-mobile: 1rem;
+  --spacing-margin-desktop: 2.5rem;
+  --container-content: 1280px;
+
+  /* Whisper shadow */
+  --shadow-whisper: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Headlines scale down 20% on mobile per DESIGN.md */
+@media (max-width: 640px) {
+  :root {
+    --text-display-lg: 2.4rem;
+    --text-headline-lg: 1.6rem;
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+    font-family: var(--font-body);
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background-color: var(--color-primary-container);
+    color: var(--color-on-primary-container);
+  }
+}
