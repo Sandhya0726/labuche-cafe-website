@@ -16,8 +16,7 @@ export default function ReservePage() {
         <PageHero align="center" title={reserveHero.title} description={reserveHero.description} />
         <ReservationFormSection {...reserveForm} />
       </main> */}
-        <h1 className="text-center w-full"> In Progress...</h1>
-
+      <h1 className="w-full text-center"> In Progress...</h1>
 
       {/* <SiteFooter {...footer} /> */}
     </>

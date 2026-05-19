@@ -20,8 +20,7 @@ export default function ContactPage() {
         />
         <ContactSection {...contact} />
         <MapShowcaseSection {...mapShowcase} /> */}
-<h1 className="text-center w-full"> In Progress...</h1>
-
+        <h1 className="w-full text-center"> In Progress...</h1>
       </main>
       {/* <SiteFooter {...footer} /> */}
     </>
