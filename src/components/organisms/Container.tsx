@@ -1,6 +1,6 @@
+import { cn } from "@/lib/cn";
 import { cva, type VariantProps } from "class-variance-authority";
 import { forwardRef, type HTMLAttributes } from "react";
-import { cn } from "@/lib/cn";
 
 const containerVariants = cva("mx-auto w-full", {
   variants: {

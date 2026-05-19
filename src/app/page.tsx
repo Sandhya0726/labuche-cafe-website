@@ -1,26 +1,11 @@
 import { Header } from "@/components/organisms/Header";
 import {
-  AboutSection,
   GallerySection,
   HeroSection,
-  MenuSection,
-  PromiseSection,
   ReservationCtaSection,
   SiteFooter,
-  TestimonialsSection
 } from "@/components/sections";
-import {
-  about,
-  brand,
-  footer,
-  gallery,
-  hero,
-  menu,
-  navItems,
-  promise,
-  reservation,
-  testimonials
-} from "@/lib/site-data";
+import { brand, footer, gallery, hero, navItems, reservation } from "@/lib/site-data";
 
 export default function Home() {
   return (
@@ -28,11 +13,11 @@ export default function Home() {
       <Header brand={brand} items={navItems} ctaHref="/reserve" />
       <main className="flex-1">
         <HeroSection {...hero} />
-        <AboutSection {...about} />
-        <MenuSection {...menu} />
-        <PromiseSection {...promise} />
+        {/* <AboutSection {...about} /> */}
+        {/* <MenuSection {...menu} /> */}
+        {/* <PromiseSection {...promise} /> */}
         <GallerySection {...gallery} />
-        <TestimonialsSection {...testimonials} />
+        {/* <TestimonialsSection {...testimonials} /> */}
         <ReservationCtaSection {...reservation} />
       </main>
       <SiteFooter {...footer} />

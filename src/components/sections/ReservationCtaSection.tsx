@@ -32,7 +32,7 @@ export function ReservationCtaSection({
     ? "bg-primary-container text-on-primary-container py-24 md:py-32"
     : isSageCard
       ? "bg-surface-container-low py-20 md:py-28"
-      : "bg-secondary-container pb-24 md:pb-32";
+      : "bg-secondary-container py-24 md:py-32";
   const cardClass = isCream
     ? "px-4 md:px-0"
     : isSageCard
