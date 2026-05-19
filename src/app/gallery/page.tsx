@@ -1,5 +1,6 @@
+import { GallerySection, PageHero, ReservationCtaSection, SiteFooter } from "@/components";
 import { Header } from "@/components/organisms/Header";
-import { brand, getNavItems } from "@/lib/site-data";
+import { brand, footer, gallery, galleryCta, galleryHero, getNavItems } from "@/lib/site-data";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,18 +14,19 @@ export default function GalleryPage() {
     <>
       <Header brand={brand} items={getNavItems("Gallery")} ctaHref="/reserve" />
       <main className="flex-1">
-        {/* <PageHero
+        <PageHero
           tone="sage"
           align="center"
           eyebrow={galleryHero.eyebrow}
           title={galleryHero.title}
           description={galleryHero.description}
         />
-        <GalleryBentoSection {...galleryBento} />
-        <ReservationCtaSection {...galleryCta} /> */}
-        <h1 className="w-full text-center"> In Progress...</h1>
+        <GallerySection {...gallery} />
+
+        {/* <GalleryBentoSection {...galleryBento} /> */}
+        <ReservationCtaSection {...galleryCta} />
       </main>
-      {/* <SiteFooter {...footer} /> */}
+      <SiteFooter {...footer} />
     </>
   );
 }
