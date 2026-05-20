@@ -16,16 +16,13 @@ import type { SiteFooterProps } from "@/components/sections/SiteFooter";
 import type { SplitMediaSectionProps } from "@/components/sections/SplitMediaSection";
 import type { TestimonialsSectionProps } from "@/components/sections/TestimonialsSection";
 import {
-  Camera,
   Coffee,
-  Globe,
   HandHeart,
   Leaf,
   Mail,
   MapPin,
   Mountain,
   Phone,
-  Share2,
   Sparkles,
   Sprout,
   Users,
@@ -282,9 +279,12 @@ export const footer: SiteFooterProps = {
     email: "info@lobuche.com.au",
     phone: "+61 413 902 092",
     socials: [
-      { label: "Website", href: "#", icon: Globe },
-      { label: "Instagram", href: "#", icon: Camera },
-      { label: "Share", href: "#", icon: Share2 },
+      { label: "Facebook", href: "#facebook", iconSrc: "/socials/facebook.png" },
+      {
+        label: "Instagram",
+        href: "#instagram",
+        iconSrc: "/socials/instagram.png",
+      },
     ],
   },
   map: {
@@ -329,8 +329,12 @@ export const contact: ContactSectionProps = {
     title: "Social Hub",
     description: "Join our community.",
     links: [
-      { label: "Instagram", href: "#instagram", icon: Camera },
-      { label: "Share", href: "#share", icon: Share2 },
+      { label: "Facebook", href: "#facebook", iconSrc: "/socials/facebook.png" },
+      {
+        label: "Instagram",
+        href: "#instagram",
+        iconSrc: "/socials/instagram.png",
+      },
     ],
   },
   formTitle: "Send us a Message",

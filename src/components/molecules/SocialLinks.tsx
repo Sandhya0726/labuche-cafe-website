@@ -1,13 +1,13 @@
 import type { LucideIcon } from "lucide-react";
+import Image from "next/image";
 import { forwardRef, type HTMLAttributes } from "react";
 import { Icon } from "@/components/atoms/Icon";
 import { cn } from "@/lib/cn";
 
-export interface SocialLink {
+export type SocialLink = {
   label: string;
   href: string;
-  icon: LucideIcon;
-}
+} & ({ icon: LucideIcon; iconSrc?: never } | { iconSrc: string; icon?: never });
 
 export interface SocialLinksProps extends HTMLAttributes<HTMLDivElement> {
   links: SocialLink[];
@@ -21,9 +21,19 @@ export const SocialLinks = forwardRef<HTMLDivElement, SocialLinksProps>(
           key={link.label}
           href={link.href}
           aria-label={link.label}
-          className="bg-surface-container/40 text-on-secondary-container hover:bg-primary-fixed hover:text-on-primary-fixed flex h-10 w-10 items-center justify-center rounded-full transition-colors"
+          className="bg-surface-container/40 text-on-secondary-container hover:bg-surface-container/70 flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 hover:scale-105"
         >
-          <Icon icon={link.icon} size={18} label={link.label} />
+          {link.iconSrc ? (
+            <Image
+              src={link.iconSrc}
+              alt=""
+              width={22}
+              height={22}
+              className="h-[22px] w-[22px] object-contain"
+            />
+          ) : link.icon ? (
+            <Icon icon={link.icon} size={18} label={link.label} />
+          ) : null}
         </a>
       ))}
     </div>
