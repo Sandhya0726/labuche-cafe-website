@@ -22,6 +22,8 @@ export interface HeaderProps {
   items?: HeaderNavItem[];
   ctaLabel?: string;
   ctaHref?: string;
+  /** Hide the primary CTA in both desktop and mobile drawer. Defaults to true. */
+  showCta?: boolean;
   sticky?: boolean;
   className?: string;
 }
@@ -40,6 +42,7 @@ export function Header({
   items = defaultItems,
   ctaLabel = "Reserve Table",
   ctaHref = "/reserve",
+  showCta = true,
   sticky = true,
   className,
 }: HeaderProps) {
@@ -82,13 +85,15 @@ export function Header({
             ))}
           </nav>
 
-          <div className="hidden md:block">
-            <Link href={ctaHref}>
-              <Button size="sm" variant="primary">
-                {ctaLabel}
-              </Button>
-            </Link>
-          </div>
+          {showCta ? (
+            <div className="hidden md:block">
+              <Link href={ctaHref}>
+                <Button size="sm" variant="primary">
+                  {ctaLabel}
+                </Button>
+              </Link>
+            </div>
+          ) : null}
 
           <button
             type="button"
@@ -111,6 +116,7 @@ export function Header({
         items={items}
         ctaLabel={ctaLabel}
         ctaHref={ctaHref}
+        showCta={showCta}
         onClose={() => setOpen(false)}
       />
     </header>
@@ -124,6 +130,7 @@ interface MobileDrawerProps {
   items: HeaderNavItem[];
   ctaLabel: string;
   ctaHref: string;
+  showCta: boolean;
   onClose: () => void;
 }
 
@@ -134,6 +141,7 @@ function MobileDrawer({
   items,
   ctaLabel,
   ctaHref,
+  showCta,
   onClose,
 }: MobileDrawerProps) {
   return (
@@ -197,13 +205,15 @@ function MobileDrawer({
           ))}
         </nav>
 
-        <div className="border-outline-variant/30 border-t p-6">
-          <Link href={ctaHref} onClick={onClose}>
-            <Button fullWidth size="md">
-              {ctaLabel}
-            </Button>
-          </Link>
-        </div>
+        {showCta ? (
+          <div className="border-outline-variant/30 border-t p-6">
+            <Link href={ctaHref} onClick={onClose}>
+              <Button fullWidth size="md">
+                {ctaLabel}
+              </Button>
+            </Link>
+          </div>
+        ) : null}
       </aside>
     </>
   );
